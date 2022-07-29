@@ -2,7 +2,6 @@ const { Given, When, Then } = require('@wdio/cucumber-framework');
 const LoginPage = require('../pageObjets/login.page');
 const ContactPage = require('../pageObjets/contact.page');
 const ProductsPage = require('../pageObjets/products.page');
-const productsPage = require('../pageObjets/products.page');
 
 const credentials = {
     name: "Test", 
