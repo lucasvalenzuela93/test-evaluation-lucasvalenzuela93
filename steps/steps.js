@@ -48,7 +48,7 @@ Then(/^user (.*) is logged$/, async (userName) => {
 
 Then(/^user is deleted$/, async () => {
     await LoginPage.deleteAccount();
-    await expect($('div[class="page-header"]')).toBeDisplayed();
+    await expect($('div[class="page-header"]')).toBeDisplayed(); //'ACCOUNT DELETED!' is not visible
 });
 
 When(/^user logins with credentials$/, async () => {
