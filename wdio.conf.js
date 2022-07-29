@@ -132,7 +132,34 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    reporters: ['spec',
+    ['junit', {
+        outputDir: './reports',
+        outputFileFormat: function(options) { // optional
+            return `results-${options.cid}.${options.capabilities}.xml`
+        }
+    }],
+    [ 'cucumberjs-json', {
+        jsonFolder: './reports',
+        language: 'en',
+    },
+    ["html-nice", {
+        outputDir: './reports',
+        filename: 'report.html',
+        reportTitle: 'Test Report Title',
+        linkScreenshots: true,
+        //to show the report in a browser when done
+        showInBrowser: true,
+        collapseTests: false,
+        //to turn on screenshots after every test
+        useOnAfterCommandForScreenshot: false,
+
+        // to initialize the logger
+        // LOG: log4j.getLogger("default")
+    }
+    ]
+],
+],
 
 
     //
